@@ -1,0 +1,35 @@
+## File and Directory Commands
+
+| Command                        | Note                                          |
+|--------------------------------|-----------------------------------------------|
+| `pwd`                           | Prints the current working directory.        |
+| `ls`                            | Lists files and directories in the current directory. |
+| `ls etc`                        | Lists contents of the `etc` directory.        |
+| `cd etc`                        | Changes the current directory to `etc`.       |
+| `cd /`                          | Changes the directory to the root directory. |
+| `cd ~`                          | Changes the directory to the home directory. |
+| `touch file1.cpp`               | Creates an empty file named `file1.cpp`.     |
+| `ls -al`                        | Lists all files with detailed information.   |
+| `vim file1`                     | Edits or creates `file1` using Vim editor.   |
+| `echo file2`                    | Outputs `file2` to the terminal.             |
+| `echo "hello world"`            | Outputs `hello world` to the terminal.       |
+| `echo "hello world " > file3`   | Writes `hello world` to `file3`, overwriting existing content. |
+| `echo "hello world " >> file3`  | Appends `hello world` to `file3`.            |
+| `cat file3`                     | Displays the content of `file3`.             |
+| `cat file1`                     | Displays the content of `file1`.             |
+| `cp file1 c++`                  | Copies `file1` to the `c++` directory.       |
+| `ls c++`                        | Lists contents of the `c++` directory.       |
+| `cd c++`                        | Changes the directory to `c++`.              |
+| `rm file1`                      | Removes `file1`.                            |
+| `ls -Aa`                        | Lists all files including hidden ones, with detailed information. |
+| `cd ..`                         | Changes to the parent directory.             |
+| `ls snap`                       | Lists contents of the `snap` directory.      |
+| `cd snap`                       | Changes the directory to `snap`.             |
+| `cp cheese c++`                 | Copies `cheese` to the `c++` directory.      |
+| `cp -r cheese c++`              | Recursively copies `cheese` to `c++`.        |
+| `cp -r cheese /c++`             | Recursively copies `cheese` to `/c++`.       |
+| `mv current .`                  | Moves `current` to the current directory.    |
+| `mv c++/current .`              | Moves `current` from `c++` to the current directory. |
+| `ls snap`                       | Lists contents of the `snap` directory.      |
+| `cd ~`                          | Changes to the home directory.               |
+
