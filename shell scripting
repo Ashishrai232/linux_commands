@@ -1,0 +1,73 @@
+#!/bin/bash  = shebang .  # you can use any other executables instead of bash.
+
+########################################################################################
+ always write metadata which includes what your script does ,owner,date etc.
+ #######################################################################################
+1. set - x is used to debug .# its primary use is to print the commands before their otput to the terminal
+2. '|' is pipe # used to pipe the output of one command to other
+  eg. ps -ef | grep "system"  # prints the lines with systems in it.
+#####################################
+> - **N/B:** *Pipe will only redirect if the output of the first command is not redirected to the stdin channel of the VM.*
+#####################################
+3. grep is highy useful command to learn for searching things.
+     ps -ef | grep snap | awk -F " " '{ print $2}'
+
+4. while writing script it is best practice to do these:
+    set -x # debug mode
+    set -e #exits the script when there is an error but will not work in pipe failure i.e if last command at pipe doesn't throws error
+    set -o pipefail #does the work in case of pipe failure
+
+###########################################################################################################################
+situation: 
+** whenever an application fails you should always go for the logfiles.Most of the time they are stored on cloud 
+platforms  and to retrieve the log files from the cloud we use "curl" command**
+
+** You can also use it to download packages**
+curl is a command-line tool used to transfer data to or from a server, utilizing various protocols such as HTTP, HTTPS, FTP, and more
+
+5.curl url
+
+to download use : curl -o filename.txt url
+
+to get errors we do : curl url | grep errors
+
+6.wget
+wget url
+difference between wget and curl is curl just gets you the file while wget downloads the file
+###########################################################################################################################
+
+7.find command
+used to find anything
+
+  sudo find / -name ____  // searches everwhere in the system //sudo  is used so that you can have do not get denied permissions
+
+###########################################################################################################################
+sudo :
+sudo su - : takes you to the root user
+su username : takes you to the user
+
+*********************************************************************************************************************
+using if_else in the shell:
+#here space is must for the expressions else an error is thrown.eg.if [ $a > $b]
+
+if [ expression ]
+  then
+           _________
+  else    
+           _________
+fi  
+********************************************************************************************************************     
+
+for loop in shell scripting
+
+for i in {1.100};   // this is the condition  
+do echo $1; // do 
+done // finsih statement
+********************************************************************************************************************
+
+8. trap command: it is used to trap signal 
+
+** you made a script and someone tries to stop it using ctrl+c you do not want it to happen so you use trap.
+
+eg. trap " echo do not use ctrl+ c " SIGINT
+   trap " rm -rf * " SIGINT // when half data was input and someone uses ctrl+c so you delete the data
