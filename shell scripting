@@ -10,7 +10,8 @@
 > - **N/B:** *Pipe will only redirect if the output of the first command is not redirected to the stdin channel of the VM.*
 #####################################
 3. grep is highy useful command to learn for searching things.
-     ps -ef | grep snap | awk -F " " '{ print $2}'
+   
+   //  ps -ef | grep snap | awk -F " " '{ print $2}'
 
 4. while writing script it is best practice to do these:
     set -x # debug mode
@@ -31,6 +32,9 @@ to download use : curl -o filename.txt url
 
 to get errors we do : curl url | grep errors
 
+  eg. curl https://raw.githubusercontent.com/iam-veeramalla/sandbox/main/log/dummylog01122022.log | grep -i "ERROR"
+
+
 6.wget
 wget url
 difference between wget and curl is curl just gets you the file while wget downloads the file
@@ -42,7 +46,7 @@ used to find anything
   sudo find / -name ____  // searches everwhere in the system //sudo  is used so that you can have do not get denied permissions
 
 ###########################################################################################################################
-sudo :
+8.sudo :
 sudo su - : takes you to the root user
 su username : takes you to the user
 
@@ -71,3 +75,25 @@ done // finsih statement
 
 eg. trap " echo do not use ctrl+ c " SIGINT
    trap " rm -rf * " SIGINT // when half data was input and someone uses ctrl+c so you delete the data
+
+
+####################################################################################################################
+
+9.awk: used to filter 
+
+ awk -F" " '{print {$col_name}} // here -F demonstrates field seperator  must be in double quotes 
+                                // '{ print }  must be used to print 
+####################################################################################################################
+
+10.find: used to find  files in the system
+
+sudo find / -name "q1.sh" 2>/dev/null 
+find ~ -name "name"
+
+####################################################################################################################
+
+11.whereis: 
+
+*imp : The whereis command is generally used to locate binaries, source files, and manual pages for commands and 
+programs, not for finding arbitrary files like q1.sh scripts.
+
